@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  pusherAppKey: '3f08615095d5885d5c98',
+  pusherCluster: 'eu',
+  mspApiUrl: 'http://localhost:8080'
 };
 
 /*

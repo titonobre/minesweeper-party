@@ -1,0 +1,49 @@
+[
+  {
+    "input": [
+      "src/assets/icons/icon.svg"
+    ],
+    "output": [
+      [
+        "src/assets/icons/icon-72.png",
+        "100%",
+        "72:"
+      ],
+      [
+        "src/assets/icons/icon-96.png",
+        "100%",
+        "96:"
+      ],
+      [
+        "src/assets/icons/icon-128.png",
+        "100%",
+        "128:"
+      ],
+      [
+        "src/assets/icons/icon-144.png",
+        "100%",
+        "144:"
+      ],
+      [
+        "src/assets/icons/icon-152.png",
+        "100%",
+        "152:"
+      ],
+      [
+        "src/assets/icons/icon-192.png",
+        "100%",
+        "192:"
+      ],
+      [
+        "src/assets/icons/icon-384.png",
+        "100%",
+        "384:"
+      ],
+      [
+        "src/assets/icons/icon-512.png",
+        "100%",
+        "512:"
+      ]
+    ]
+  }
+]
