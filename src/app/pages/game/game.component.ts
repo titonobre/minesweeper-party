@@ -31,6 +31,8 @@ import { revealTile, isGameOver, createGame, Tile, Game, setFlag } from '../../.
   styles: [`
     .container {
       position: relative;
+      max-width: 450px;
+      margin: 0 auto;
     }
 
     .content {
