@@ -13,8 +13,80 @@
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .shell .toolbar {
+      background-color: #3f51b5;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      font: 500 20px/32px "Helvetica Neue", sans-serif;
+      font-weight: 500;
+      color: #ffffff;
+      padding: 0 16px;
+    }
+
+    .shell .toolbar-icon {
+      display: inline-block;
+      height: 30px;
+      width: 30px;
+      background-color: #ffc107;
+      margin: 5px;
+      border-radius: 50%;
+    }
+
+    .shell .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 56px);
+    }
+
+    .shell .loader {
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+    }
+
+    .shell .loader:after {
+      content: " ";
+      display: block;
+      width: 150px;
+      height: 150px;
+      margin: 1px;
+      border-radius: 50%;
+      border: 5px solid #cfcfcf;
+      border-color: #cfcfcf transparent #cfcfcf transparent;
+      animation: loader-animation 1.2s linear infinite;
+    }
+
+    @keyframes loader-animation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body class="mat-body">
-  <msp-root></msp-root>
+  <msp-root>
+    <div class="shell">
+      <div class="toolbar">
+        <div class="toolbar-icon"></div>
+        MineSweeper Party
+      </div>
+      <div class="content">
+        <div class="loader"></div>
+      </div>
+    </div>
+  </msp-root>
 </body>
 </html>
