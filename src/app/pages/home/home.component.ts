@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { generateRandomString } from '../../utils/utils';
 
 @Component({
   selector: 'msp-home',
@@ -7,10 +8,13 @@ import { Component } from '@angular/core';
       <div class="header">
       </div>
       <div class="content">
-        <button mat-button routerLink="/easy">Easy</button>
-        <button mat-button routerLink="/medium">Medium</button>
-        <button mat-button routerLink="/hard">Hard</button>
-        <button mat-button routerLink="/extreme">Extreme</button>
+      <span class="footer mat-body-1">open a predefined game</span>
+        <button mat-raised-button routerLink="/easy">Easy</button>
+        <button mat-raised-button routerLink="/medium">Medium</button>
+        <button mat-raised-button routerLink="/hard">Hard</button>
+        <button mat-raised-button routerLink="/extreme">Extreme</button>
+        <span class="footer mat-body-1">or generate a random game to share with others...</span>
+        <button mat-raised-button routerLink="/{{randomGameId}}">Random</button>
       </div>
       <div class="footer mat-body-1">
         <span>
@@ -39,14 +43,20 @@ import { Component } from '@angular/core';
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
     }
 
-    .content > *:not(:first-child) {
-      margin-top: 1em;
+    .content > * {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
     }
 
     .footer {
       grid-area: footer;
+    }
+
+    .footer,
+    .separator {
       display: flex;
       padding: 8px;
       justify-content: center;
@@ -54,4 +64,11 @@ import { Component } from '@angular/core';
     }
   `]
 })
-export class HomeComponent { }
+export class HomeComponent implements OnInit {
+
+  public randomGameId: string;
+
+  ngOnInit (){
+    this.randomGameId = generateRandomString();
+  }
+}
