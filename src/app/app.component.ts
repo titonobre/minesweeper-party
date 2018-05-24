@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'msp-root',
@@ -8,17 +8,13 @@ import { Component, OnInit } from '@angular/core';
         <a mat-icon-button routerLink="/"><img width="30" src="assets/icons/icon.svg"></a>
         <span>MineSweeper Party</span>
         <span style="flex: 1;"></span>
-        <span></span>
+        <button *ngIf="showShareButton" mat-icon-button (click)="shareCurrentState()" class="share-button" ><img width="30" src="assets/icons/share.svg"></button>
       </mat-toolbar>
 
       <div class="content">
         <router-outlet ></router-outlet>
       </div>
     </div>
-
-
-
-    <!--<img width="300" src="assets/icons/icon.svg">-->
   `,
   styles: [`
 
@@ -40,11 +36,19 @@ import { Component, OnInit } from '@angular/core';
     }
   `]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
+
+  public showShareButton = false;
 
   constructor() {
+    this.showShareButton = !!navigator['share'];
   }
 
-  ngOnInit() {
+  shareCurrentState(){
+    navigator['share']({
+      title: document.title,
+      text: 'MineSweeper Party',
+      url: window.location.href,
+    });
   }
 }
