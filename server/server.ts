@@ -43,6 +43,8 @@ app.get('/game/:channel([A-Za-z0-9]{1,20})', function (req, res) {
 
   if (predefinedGames[channel]) {
     games[channel] = createGame(predefinedGames[channel]);
+  } else {
+    games[channel] = createGame(predefinedGames.medium);
   }
 
   return res.json(games[channel]);
