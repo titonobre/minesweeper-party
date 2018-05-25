@@ -25,7 +25,8 @@ const colors = {
       (touchmove)="handleUp()"
       >
       <span *ngIf="tile.isRevealed && !tile.isMine && tile.threatCount > 0" [style.color]="color">{{ tile.threatCount }}</span>
-      <span *ngIf="tile.isRevealed && tile.isMine">💥</span>
+      <span *ngIf="tile.isRevealed && tile.isMine && !tile.isFlagged">💥</span>
+      <span *ngIf="tile.isRevealed && tile.isMine && tile.isFlagged">✔️</span>
       <span *ngIf="!tile.isRevealed && tile.isFlagged">🚩</span>
     </div>
   `,
