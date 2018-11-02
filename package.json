@@ -17,8 +17,8 @@
     "lint": "ng lint"
   },
   "engines": {
-    "node": "10.1.0",
-    "npm": "6.0.0"
+    "node": "10.13.0",
+    "npm": "6.4.1"
   },
   "dependencies": {
     "@angular/animations": "6.1.10",
