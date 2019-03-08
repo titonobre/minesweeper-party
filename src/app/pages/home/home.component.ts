@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
 
   public randomGameId: string;
 
-  ngOnInit (){
+  ngOnInit () {
     this.randomGameId = generateRandomString();
   }
 }

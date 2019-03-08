@@ -10,7 +10,7 @@ const colors = {
   6: '#CE3CD4',
   7: '#743EC4',
   8: '#3F51B5',
-}
+};
 
 @Component({
   selector: 'msp-tile',
@@ -72,7 +72,7 @@ export class TileComponent implements OnChanges {
 
   private lastEventWasHold: boolean;
 
-  ngOnChanges(){
+  ngOnChanges() {
     this.color = colors[this.tile.threatCount];
   }
 
@@ -82,9 +82,9 @@ export class TileComponent implements OnChanges {
     }
   }
 
-  handleDblClick($event: MouseEvent){
+  handleDblClick($event: MouseEvent) {
 
-    if($event){
+    if ($event) {
       $event.stopImmediatePropagation();
       $event.preventDefault();
     }

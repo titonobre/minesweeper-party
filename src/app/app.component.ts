@@ -8,7 +8,13 @@ import { Component } from '@angular/core';
         <a mat-icon-button routerLink="/"><img width="30" src="assets/icons/icon.svg"></a>
         <span>MineSweeper Party</span>
         <span style="flex: 1;"></span>
-        <button *ngIf="showShareButton" mat-icon-button (click)="shareCurrentState()" class="share-button" ><img width="30" src="assets/icons/share.svg"></button>
+        <button
+          *ngIf="showShareButton"
+          mat-icon-button
+          (click)="shareCurrentState()"
+          class="share-button" >
+            <img width="30" src="assets/icons/share.svg" />
+        </button>
       </mat-toolbar>
 
       <div class="content">
@@ -44,7 +50,7 @@ export class AppComponent {
     this.showShareButton = !!navigator['share'];
   }
 
-  shareCurrentState(){
+  shareCurrentState() {
     navigator['share']({
       title: document.title,
       text: 'MineSweeper Party',

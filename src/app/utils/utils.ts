@@ -5,4 +5,4 @@ export function generateRandomString(length = 12) {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   }
   return text;
-};
+}
