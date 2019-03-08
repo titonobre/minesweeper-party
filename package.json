@@ -9,7 +9,6 @@
     "build": "npm-run-all build:*",
     "build:app": "ng build --prod --aot --build-optimizer --stats-json --source-map --extract-licenses",
     "build:server": "tsc -p server --outDir dist/server",
-    "postinstall": "npm run build",
     "prebuild": "npm-run-all prepare:*",
     "prepare:generate-app-image": "svgexport svgexport.json",
     "prepare:minify-app-image": "imagemin src/assets/icons/*.png --out-dir=src/assets/icons",
@@ -60,5 +59,6 @@
     "ts-node": "7.0.1",
     "tslint": "5.11.0",
     "typescript": "2.9.2"
-  }
+  },
+  "heroku-run-build-script": true
 }
