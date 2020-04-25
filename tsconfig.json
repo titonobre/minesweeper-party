@@ -9,14 +9,14 @@
     // "noImplicitAny": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "target": "es2015",
     "typeRoots": [
       "node_modules/@types",
       "node_modules/pusher-js/src/d.ts"
     ],
     "types": [],
     "lib": [
-      "es2017",
+      "es2020",
       "dom"
     ]
   }
