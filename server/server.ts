@@ -88,27 +88,6 @@ app.post('/game/:channel([A-Za-z0-9]{1,20})/flag', function (req, res) {
   res.json();
 });
 
-app.post('/game/:channel([A-Za-z0-9]{1,20})/reveal', function (req, res) {
-  const { channel } = req.params;
-  const { tile } = req.body;
-
-  const game = games[channel];
-
-  if (!game || isGameOver(game)) {
-    return;
-  }
-
-  pusher.trigger(channel, 'reveal', { tile });
-
-  const newGame = games[channel] = revealTile(game, tile);
-
-  if (isGameOver(newGame)) {
-    delete games[channel];
-  }
-
-  res.json();
-});
-
 app.get('/*', function (req, res) {
   res.sendFile(path.join(staticFilesBaseDir + '/index.html'));
 });
