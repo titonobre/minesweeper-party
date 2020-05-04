@@ -37,8 +37,8 @@
     "cors": "2.8.5",
     "dotenv": "8.2.0",
     "express": "4.17.1",
-    "pusher": "2.2.2",
-    "pusher-js": "4.4.0",
+    "pusher": "3.0.1",
+    "pusher-js": "6.0.2",
     "rxjs": "6.5.5",
     "tslib": "1.11.1",
     "zone.js": "0.10.3"

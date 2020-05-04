@@ -22,7 +22,7 @@ export class MinesweeperPartyService {
   constructor(private http: HttpClient) {
     this.socket = new Pusher(environment.pusherAppKey, {
       cluster: environment.pusherCluster,
-      encrypted: true
+      forceTLS: true
     });
   }
 
@@ -34,17 +34,20 @@ export class MinesweeperPartyService {
     return new Observable(observer => {
       const channel = this.socket.subscribe(channelName);
 
-      const handler1 = channel.bind('reveal', (reveal) => {
+      const revealHandler: Function = (reveal) => {
         observer.next({ reveal });
-      });
-
-      const handler2 = channel.bind('flag', (flag) => {
+      };
+      
+      const flagHandler: Function = (flag) => {
         observer.next({ flag });
-      });
+      };
+      
+      channel.bind('reveal', revealHandler);
+      channel.bind('flag', flagHandler);
 
       return () => {
-        channel.unbind('reveal', handler1);
-        channel.unbind('flag', handler2);
+        channel.unbind('reveal', revealHandler);
+        channel.unbind('flag', flagHandler);
       };
     });
   }
