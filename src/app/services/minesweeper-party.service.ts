@@ -37,11 +37,11 @@ export class MinesweeperPartyService {
       const revealHandler: Function = (reveal) => {
         observer.next({ reveal });
       };
-      
+
       const flagHandler: Function = (flag) => {
         observer.next({ flag });
       };
-      
+
       channel.bind('reveal', revealHandler);
       channel.bind('flag', flagHandler);
 
