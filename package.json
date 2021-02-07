@@ -17,8 +17,8 @@
     "lint": "ng lint"
   },
   "engines": {
-    "node": ">=14",
-    "npm": ">=6"
+    "node": "14.x",
+    "npm": "6.x"
   },
   "dependencies": {
     "@angular/animations": "11.1.2",
