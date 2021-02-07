@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --aot",
+    "start": "ng serve",
     "start-server": "node-dev server",
     "build": "npm-run-all build:*",
     "build:app": "ng build --prod --aot --build-optimizer --stats-json --source-map --extract-licenses",
