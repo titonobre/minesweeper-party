@@ -33,7 +33,7 @@
     "@angular/router": "11.2.0",
     "@angular/service-worker": "11.2.0",
     "compression": "1.7.4",
-    "core-js": "^3.8.2",
+    "core-js": "^3.9.0",
     "cors": "2.8.5",
     "dotenv": "8.2.0",
     "express": "4.17.1",
